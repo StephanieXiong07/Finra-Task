@@ -1,0 +1,154 @@
+JVM converts java execute code to processor instruction. (PLATFORM INDEPENDENT)
+IDENTIFIER: class name, variable name, function name, object name (_ and $ itself can be a valid identifier, keyword cannot be identifier, String is a inner class)
+
+Primitive datatype:
+	Numeric datatype:
+		Integeral datatype: 
+			byte(-128-127): byte b = (byte)130; --> output -126 (round back) 
+			short(2 bytes, -32768 to 32767)
+			int(4 bytes, -2147483648 to 2147483647):
+			long(8 bytes)
+		Floating: 
+			float(4 bytes): float f = 12.4f; (must followed by f, otherwise error will occur)
+			double(8 bytes): double d = 34.345 (no required for following d)
+	Character: 
+		char(1 byte): char c = 'q';
+	Boolean: 
+		boolean: boolean b = true; (by default, false)
+
+Values declared in variables are called LITERALS.
+
+ARRAYS:
+int[] i = new int[10];
+OR 
+int i[] = new int[10];
+OR 
+int []i = new int[10];
+
+
+TYPES of variables:
+	Primitive variable:
+		instance: values of object.
+		static: static method cannot access instance variable, and vice versa.
+		local: before using, declare the value of it.
+	Reference variable:
+		Used to refer to an object.
+
+OPERATOR:
+	increment/decrement:
+		pre...: int x = ++y;
+		post...: int x = y++;
+	Arithmetic: +,-,*,/,%
+	String concatenation: +...
+	Relational: <,<=,>,>=,==,!=
+
+CONTROL statement: if, if else, while, do-while,for,switch,continue,break,etc.
+
+Access Modifier:
+	top level class modifier:
+		public: can access from same pkg or even different pkg (import pkg)
+		<default>: cannt be accessed by other pkg.
+		final: cannot be extended, method cannot be overridden
+		abstract: class --> cannot create object of that class, can also have normal method; 			  
+				  method --> dont have any body (THEN THE CLASS SHOULD BE abstract); 
+		strictfp: class --> 
+				  method --> give back the correct exact values
+	innerclass modifier:
+		public:
+		private: can be only accessed in the same class
+		protected:
+		default:
+		abstract:
+		strctfp:
+		final:
+		static:
+
+	           | Class | Package | Subclass | Subclass | World
+            |       |         |(same pkg)|(diff pkg)| 
+————————————+———————+—————————+——————————+——————————+————————
+public      |   +   |    +    |    +     |     +    |   +     
+————————————+———————+—————————+——————————+——————————+————————
+protected   |   +   |    +    |    +     |     +    |         
+————————————+———————+—————————+——————————+——————————+————————
+no modifier |   +   |    +    |    +     |          |    
+————————————+———————+—————————+——————————+——————————+————————
+private     |   +   |         |          |          |    
+
+
+INTERFACE:
+	A pure abstract class: Does not have concrete method(no implemetation in methods).
+						   No need to define the ABSTRACT keyword, since it's automatically.
+						   By default, it's PUBLIC. Since it should be accessed by other pkgs.
+						   abstract method cannot be STATIC.
+						   A class can implements multiple interfaces.
+						   FOR Java 8, we can also have implementations in INTERFACE
+						   Interface can extends interface
+
+Inheretence:
+	supper class variables can be accessed by child object creation
+	Overriding: same modifer(sometimes), return type, method name, parameters (different implementations)
+	Overloading: only the method name with different parameters (Still possible for ambiguity)
+	
+OOP:
+	Data hinding: set data private, access from outside the class is not allowed.
+	Abstraction: hinding internal details and highliting the set of services
+	Encapsulation: Wrapping the data in a unit.
+	Polymorphism: superclass references holding subclass object
+
+STATIC Block:
+	Will execute (when the class is loaded) without any methods.
+	Identify all static members right after class loaded;
+	Then start from top;
+	For variable in static block, we need check initialization, but for static method, we can directly implement.
+
+Instance Method:
+	Firstly instance block is executed, Then constructor will be ran.
+
+Exception:
+	It's the JVM's responsibility to create exception object.
+	EXCEPTION handling:
+		try...catch...finally
+		multiple chatches are allowed.
+		THROW: MANUALLY throw the exception. (throw new Exception())
+		THROWS: want to throws Exception right after method signature.
+	Checked Exception: caught during compile time
+	Unchecked Exception:
+
+
+Object class:
+	String: immutable
+	StringBuilder: thread-unsafe
+	StringBuffer: better to do modification(muttable), thread-safe, slower
+	WrapperClass: 
+		auto-unboxing: automatically converts wrapper class to primitive
+
+Object methods:
+	toString()
+	equals()
+	hashCode(): JVM automatically assign a unique ID to an object
+	finalize()
+	notify()
+	notyfyAll()
+	clone()
+
+Collections is CLASS;
+Collection is an interface:
+	List(I):
+		ArrayList(c) -> follows ARRAY data structure: it only accepts OBJECTS
+		Iterator: can be used for all.
+		ListIterator: Only be used for List interfaces.
+		LinkedList(c) -> follows Doubly Linked List data structire: its easy for insertion and deletion
+		Vector(c) -> Resizable Array:
+		Stack(c) -> FILO:
+	Set(I):
+		HashSet(c) -> HashTable data structure:
+		LinkedHashSet(c) -> LinkedList and HashTable structure: in the order you added.
+		TreeSet(c) -> balanced tree data structure: in asc order by default
+	Map(I) -> key,value pair structure:
+		HashMap(c) -> hashTable data structure:
+		LinkedHashMap(c) -> hash table and LinkedList data structure:
+		ConcurrentHashMap(c):
+		TreeMap(c):
+
+Thread:
+	Synchronized: only allow ONE thread a time. ONE is gonna wait until current thread is totally done. 
