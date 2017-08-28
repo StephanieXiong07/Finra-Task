@@ -24,7 +24,6 @@ public class FileController {
 
 	@Autowired
 	FileService fileService;
-	//autowire
 	
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public UploadFile uploadFile(MultipartFile file) throws IllegalStateException, IOException{

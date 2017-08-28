@@ -25,11 +25,15 @@ public class UploadFile implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer fileID;
 	
+	public Integer getFileID() {
+		return fileID;
+	}
+	public void setFileID(Integer fileID) {
+		this.fileID = fileID;
+	}
+
 	@Column(name = "file_name")
 	private String fileName;
-	
-//	@Column(name = "")
-//	private String fileType;
 	
 	@Column(name = "file_path")
 	private String fileLoc;
@@ -45,14 +49,6 @@ public class UploadFile implements Serializable{
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-	
-	
-//	public String getFileType() {
-//		return fileType;
-//	}
-//	public void setFileType(String fileType) {
-//		this.fileType = fileType;
-//	}
 	
 	
 	public String getFileLoc() {

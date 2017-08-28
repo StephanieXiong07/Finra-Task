@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Thu Aug 10 17:55:50 EDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015d-ce25-81b6-0000055d22d0 
-on database directory memory:/Users/shiqi/Documents/Eclipse_workspace/StephanieSpringBoot/testdb with class loader sun.misc.Launcher$AppClassLoader@764c12b6 
+Mon Aug 28 18:33:00 EDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015e-2af9-fda5-000004d446d0 
+on database directory memory:/Users/shiqi/git/FinraTask/StephanieSpringBoot/testdb with class loader sun.misc.Launcher$AppClassLoader@3f91beef 
 Loaded from file:/Users/shiqi/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_101-b13
-user.dir=/Users/shiqi/Documents/Eclipse_workspace/StephanieSpringBoot
+user.dir=/Users/shiqi/git/FinraTask/StephanieSpringBoot
 os.name=Mac OS X
 os.arch=x86_64
 os.version=10.12.6
